@@ -4,19 +4,24 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    Vector2 xMove;
+    Vector2 Move;
     Transform player;
     // Start is called before the first frame update
     void Start()
     {
-        xMove = new Vector2 (1.0f, 0.0f);
-        Debug.Log(xMove);
+        Move = new Vector2 (2.0f, 0.0f);
         player = gameObject.transform;
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(0.1f, 0.0f, 0.0f);
+        float arrowInput = Input.GetAxis("Horizontal");
+        float upandown = Input.GetAxis("Vertical");
+        Move.x = arrowInput;
+        Move.y = upandown;
+        player.Translate(Move*Time.deltaTime);
+        Vector2 flip = new Vector2(-1.0f, 1.0f);
+        transform.localScale *= flip;
     }
 }
