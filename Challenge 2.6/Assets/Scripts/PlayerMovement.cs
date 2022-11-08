@@ -16,12 +16,19 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float arrowInput = Input.GetAxis("Horizontal");
-        float upandown = Input.GetAxis("Vertical");
-        Move.x = arrowInput;
-        Move.y = upandown;
+        float leftright = Input.GetAxis("Horizontal");
+        float updown = Input.GetAxis("Vertical");
+        Move.x = leftright;
+        Move.y = updown;
         player.Translate(Move*Time.deltaTime);
-        Vector2 flip = new Vector2(-1.0f, 1.0f);
-        transform.localScale *= flip;
+       
+        if(leftright > 0)
+        {
+            player.localScale = new Vector3(5.0f, 5.0f, 1.0f);
+        }
+        if(leftright < 0)
+        {
+            player.localScale = new Vector3(-5.0f, 5.0f, 1.0f);
+        }
     }
 }
