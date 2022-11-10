@@ -33,7 +33,6 @@ public class PlayerMove : MonoBehaviour
         if (leftright < 0)
         {
             player.localScale = new Vector3(-5.0f, 5.0f, 1.0f);
-            m_Rigidbody.AddForce(transform.up * m_Thrust);
         }
     }
 }
