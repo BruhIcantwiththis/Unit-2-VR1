@@ -9,6 +9,6 @@ public class UIAcorn : MonoBehaviour
 
     void Update()
     {
-        AcornText.text = "Acorns " + PlayerMove.Acornum;
+        AcornText.text = "Acorns " + PlayerMove.Acornum + "/20";
     }
 }

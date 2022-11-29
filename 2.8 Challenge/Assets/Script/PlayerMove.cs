@@ -52,7 +52,9 @@ public class PlayerMove : MonoBehaviour
         {
             Debug.Log("OUCH!");
             Lives--;
+            Animator.SetBool("Pain", true);
         }
+        else { Animator.SetBool("Pain", false); }
         if (col.gameObject.tag == "acorn")
         {
             Acornum += 1;
