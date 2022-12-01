@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMove : MonoBehaviour
 {
@@ -40,7 +41,9 @@ public class PlayerMove : MonoBehaviour
         if (Lives == 0)
         {
             Debug.Log("Game Over");
+            SceneManager.LoadScene(2);
         }
+        
     }
     void OnBecomeInvisible()
         {
