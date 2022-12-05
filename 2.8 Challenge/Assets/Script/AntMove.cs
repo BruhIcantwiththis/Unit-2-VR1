@@ -18,5 +18,6 @@ public class AntMove : MonoBehaviour
     {
         float x = Input.GetAxis("Horizontal");
         sprite.Translate(xMove);
+        
     }
 }

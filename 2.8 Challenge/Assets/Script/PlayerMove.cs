@@ -12,12 +12,14 @@ public class PlayerMove : MonoBehaviour
     float Thrust = 5f;
     public static float Acornum;
     public static int Lives = 3;
+    public bool CornGot = false;
     // Start is called before the first frame update
     void Start()
     {
        Move = new Vector2(2.0f, 0.0f);
        player = gameObject.transform;
        m_Rigidbody = GetComponent<Rigidbody>();
+        Lives = 3;
     }
 
     // Update is called once per frame
@@ -43,11 +45,16 @@ public class PlayerMove : MonoBehaviour
             Debug.Log("Game Over");
             SceneManager.LoadScene(2);
         }
-        
-    }
+        if (Acornum == 20)
+        {
+            CornGot = true;
+        }
+        }
     void OnBecomeInvisible()
         {
-            Destroy(gameObject);
+        Debug.Log("Off Cam");
+        Destroy(gameObject);
+        SceneManager.LoadScene(2);
         }
     void OnCollisionEnter2D (Collision2D col)
     {
