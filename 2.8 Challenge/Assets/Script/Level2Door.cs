@@ -8,9 +8,10 @@ public class Level2Door : MonoBehaviour
     public Animator Animator;
 
     // Update is called once per frame
+   
     void Update()
     {
-        if (PlayerMove.CornGot = true)
+        if (PlayerMove.Acornum == 20)
         {
             Debug.Log("gottem");
             Animator.SetBool("CornAll", true);
