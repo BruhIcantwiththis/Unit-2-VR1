@@ -12,7 +12,7 @@ public class PlayerMove : MonoBehaviour
     float Thrust = 5f;
     public static int Lives = 3;
     public static int KeyBits = 0;
-    Public bool KeyFixed = false;
+    public bool KeyFixed = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,19 +31,30 @@ public class PlayerMove : MonoBehaviour
         Move.y = updown * Thrust;
         player.Translate(Move * Time.deltaTime);
         Animator.SetFloat("LR", Mathf.Abs(leftright));
-        Animator.SetFloat("UD", Mathf.Abs(updown));
         if (leftright > 0)
         {
-            player.localScale = new Vector3(5.0f, 5.0f, 1.0f);
+            Animator.SetBool("Right", true);
         }
+        else { Animator.SetBool("Right", false); }
         if (leftright < 0)
         {
-            player.localScale = new Vector3(-5.0f, 5.0f, 1.0f);
+            Animator.SetBool("Left", true);
         }
+        else { Animator.SetBool("Left", false); }
+        if(updown > 0)
+        {
+            Animator.SetBool("Up", true);
+        }
+        else { Animator.SetBool("Up", false); }
+        if(updown < 0)
+        {
+            Animator.SetBool("Down", true);
+        }
+        else { Animator.SetBool("Down", false); }
         if (Lives == 0)
         {
             Debug.Log("Game Over");
-            SceneManager.LoadScene(____);
+            SceneManager.LoadScene(0);
         }
         if ( KeyBits == 10)
         {
@@ -54,7 +65,7 @@ public class PlayerMove : MonoBehaviour
         {
         Debug.Log("Off Cam");
         Destroy(gameObject);
-        SceneManager.LoadScene(________);
+        SceneManager.LoadScene(0);
         }
     void OnCollisionEnter2D (Collision2D col)
     {
