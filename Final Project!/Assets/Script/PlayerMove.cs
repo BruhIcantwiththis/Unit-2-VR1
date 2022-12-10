@@ -30,7 +30,6 @@ public class PlayerMove : MonoBehaviour
         Move.x = leftright * Thrust;
         Move.y = updown * Thrust;
         player.Translate(Move * Time.deltaTime);
-        Animator.SetFloat("LR", Mathf.Abs(leftright));
         if (leftright > 0)
         {
             Animator.SetBool("Right", true);
