@@ -79,5 +79,9 @@ public class PlayerMove : MonoBehaviour
         {
             KeyBits += 1;
         }
+        if (col.gameObject.tag == "SpookG")
+        {
+            Lives = 0;
+        }
     }
 }
