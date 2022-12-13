@@ -12,8 +12,9 @@ public class BadTimeTimer : MonoBehaviour
         {
             countdown -=Time.deltaTime;
         }
-        if(countdown == 0)
+        if(countdown < 0)
         {
+            Debug.Log("DieTIme");
             DieTime = true;
         }
     }
