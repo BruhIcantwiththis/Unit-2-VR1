@@ -12,14 +12,14 @@ public class PlayerMove : MonoBehaviour
     float Thrust = 5f;
     public static int Lives = 3;
     public static int KeyBits = 0;
-    public bool KeyFixed = false;
+    public static bool KeyFixed = false;
     // Start is called before the first frame update
     void Start()
     {
        Move = new Vector2(2.0f, 0.0f);
        player = gameObject.transform;
        m_Rigidbody = GetComponent<Rigidbody>();
-        Lives = 3;
+       Lives = 3;
     }
 
     // Update is called once per frame
@@ -68,13 +68,6 @@ public class PlayerMove : MonoBehaviour
         }
     void OnCollisionEnter2D (Collision2D col)
     {
-        if (col.gameObject.tag == "Vulmer")
-        {
-            Debug.Log("OUCH!");
-            Lives--;
-            Animator.SetBool("Pain", true);
-        }
-        else { Animator.SetBool("Pain", false); }
         if (col.gameObject.tag == "KeyFrag")
         {
             KeyBits += 1;

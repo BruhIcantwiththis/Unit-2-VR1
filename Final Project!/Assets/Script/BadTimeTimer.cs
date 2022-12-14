@@ -6,6 +6,7 @@ public class BadTimeTimer : MonoBehaviour
 {
     public float countdown = 10;
     public static bool DieTime = false;
+    public float BadTimeLeft = 0;
     void Update()
     {
         if(countdown > 0)
@@ -14,8 +15,12 @@ public class BadTimeTimer : MonoBehaviour
         }
         if(countdown < 0)
         {
-            Debug.Log("DieTIme");
             DieTime = true;
+            BadTimeLeft = 5;
+        }
+        if(BadTimeLeft > 0)
+        {
+            BadTimeLeft -= Time.deltaTime*90;
         }
     }
 }
