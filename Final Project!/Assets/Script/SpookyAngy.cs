@@ -11,7 +11,7 @@ public class SpookyAngy : MonoBehaviour
     void Start()
     {
         sprite = gameObject.transform;
-        xMove = new Vector2(-0.006f, 0.0f);
+        xMove = new Vector2(-0.014f, 0.0f);
     }
     void Update()
     {

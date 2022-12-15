@@ -7,6 +7,10 @@ public class BadTimeTimer : MonoBehaviour
     public float countdown = 240;
     public static bool DieTime = false;
     public float BadTimeLeft = 0;
+    void Start()
+    {
+        DieTime = false;
+    }
     void Update()
     {
         if(countdown > 0)

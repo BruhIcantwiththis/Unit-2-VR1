@@ -10,7 +10,7 @@ public class PlayerMove : MonoBehaviour
     public Animator Animator;
     Rigidbody m_Rigidbody;
     float Thrust = 5f;
-    public static int Lives = 3;
+    public static int Lives = 5;
     public static int KeyBits = 0;
     public static bool KeyFixed = false;
     public static int RedKey = 0;
@@ -20,7 +20,8 @@ public class PlayerMove : MonoBehaviour
        Move = new Vector2(2.0f, 0.0f);
        player = gameObject.transform;
        m_Rigidbody = GetComponent<Rigidbody>();
-       Lives = 3;
+        Lives = 5;
+        KeyBits = 0;
     }
 
     // Update is called once per frame
@@ -56,6 +57,11 @@ public class PlayerMove : MonoBehaviour
             Debug.Log("Game Over");
             SceneManager.LoadScene(0);
         }
+        if (Lives == 0)
+        {
+            Debug.Log("Game Over");
+            SceneManager.LoadScene(0);
+        }
         if ( KeyBits == 10)
         {
             KeyFixed = true;
@@ -79,7 +85,9 @@ public class PlayerMove : MonoBehaviour
         }
         if (col.gameObject.tag == "SpookG")
         {
-            Lives = 0;
+            Scene scene = SceneManager.GetActiveScene();
+            SceneManager.LoadScene(scene.name);
+            SpookyAngy.Angy = false;
         }
     }
 }

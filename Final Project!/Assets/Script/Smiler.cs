@@ -22,7 +22,7 @@ public class Smiler : MonoBehaviour
         {
             if (col.gameObject.tag == "Player")
             {
-                PlayerMove.Lives--;
+                PlayerMove.Lives --;
             }
         }
 }
