@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BadTimeTimer : MonoBehaviour
 {
-    public float countdown = 10;
+    public float countdown = 240;
     public static bool DieTime = false;
     public float BadTimeLeft = 0;
     void Update()
@@ -16,7 +16,7 @@ public class BadTimeTimer : MonoBehaviour
         if(countdown < 0)
         {
             DieTime = true;
-            BadTimeLeft = 5;
+            BadTimeLeft = 30;
         }
         if(BadTimeLeft > 0)
         {

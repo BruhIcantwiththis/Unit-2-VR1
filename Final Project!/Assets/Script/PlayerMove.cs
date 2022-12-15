@@ -13,6 +13,7 @@ public class PlayerMove : MonoBehaviour
     public static int Lives = 3;
     public static int KeyBits = 0;
     public static bool KeyFixed = false;
+    public static int RedKey = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -50,7 +51,7 @@ public class PlayerMove : MonoBehaviour
             Animator.SetBool("Down", true);
         }
         else { Animator.SetBool("Down", false); }
-        if (Lives == 0)
+        if (Lives < 0)
         {
             Debug.Log("Game Over");
             SceneManager.LoadScene(0);
@@ -71,6 +72,10 @@ public class PlayerMove : MonoBehaviour
         if (col.gameObject.tag == "KeyFrag")
         {
             KeyBits += 1;
+        }
+        if(col.gameObject.tag == "RedKey")
+        {
+            RedKey = 1;
         }
         if (col.gameObject.tag == "SpookG")
         {

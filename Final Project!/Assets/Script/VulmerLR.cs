@@ -23,13 +23,11 @@ public class VulmerLR : MonoBehaviour
         {
             moveSpeed = 3f;
             Animator.SetBool("Angy", true);
-            //gameObject.GetComponent<CircleCollider2D>().enabled = true;
         }
         else
         {
             moveSpeed = 1f;
             Animator.SetBool("Angy", false);
-            //gameObject.GetComponent<CircleCollider2D>().enabled = false;
         }
     }
     private void OnTriggerEnter2D(Collider2D col)

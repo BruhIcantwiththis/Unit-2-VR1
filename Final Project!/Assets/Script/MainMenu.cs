@@ -23,4 +23,8 @@ public class MainMenu : MonoBehaviour
         if (BadTimeTimer.DieTime == true)
             Debug.Log("Uh oh");
     }
+    public void Main()
+    {
+        SceneManager.LoadScene(5);
+    }
 }
