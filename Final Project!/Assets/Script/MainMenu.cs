@@ -27,8 +27,4 @@ public class MainMenu : MonoBehaviour
     {
         SceneManager.LoadScene(5);
     }
-    public void FullBright()
-    {
-        UIon = false;
-    }
 }
